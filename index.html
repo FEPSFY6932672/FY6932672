@@ -7,7 +7,7 @@
       <h1><b>ENG0018 Computer Laboratory 2026/27</b></h1>
       <h2>Student URN: 6932672</h2>
     <hr>
-    <h2 style="font-family:calibri;"><b>Conference paper: SUUUUIIIIIIIIIII</b></h2>
+    <h2 style="font-family:calibri;"><b>Conference paper: Do self-driving cars need LiDAR to see safely?</b></h2>
     <hr>
 
       <!style for tables>
@@ -39,7 +39,7 @@ p.ex1 {
   margin-left: 250px;
 }
 </style>
-<title>My Daily Activities</title>
+<title>Do self-driving cars need LiDAR to see safely?</title>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   </head>
 
@@ -65,7 +65,19 @@ p.ex1 {
     <td><a href="#Introduction">Introduction</td>
   </tr>
   <tr>
-    <td><a href="#Analysis and discussion">Analysis and discussion</td>
+    <td><a href="#Cameras">Cameras</td>
+  </tr>
+  <tr>
+    <td><a href="#LiDAR">LiDAR and Radar</td>
+  </tr>
+  <tr>
+    <td><a href="#Debate">The Debate: Tesla and Waymo</td>
+  </tr>
+  <tr>
+    <td><a href="#Comparison">Sensor Comparison</td>
+  </tr>
+  <tr>
+    <td><a href="#Conclusion">Conclusion</td>
   </tr>
 
   <tr>
@@ -76,125 +88,102 @@ p.ex1 {
 
 <hr>
 <h3 id="Abstract">Abstract</h3>
-
-<p class="ex1">
-<pre>
-  This paper presents a novel adaptive active learning strategy. The most accurate classification model from a heterogeneous
-  classifier pool is selected at each learning epoch. Our goal is to achieve greater incremental improvement in accuracy, compared
-  to using a single type of classification model throughout the process. The strategy is evaluated on benchmark data sets.
-  We further consider an application to texture classification problems in sonar mosaic imagery and compare it with non-adaptive
-  active learning and traditional machine learning approaches. Our results show that…We conclude that…
-</pre>
+<p>
+Self-driving cars need to detect people, other vehicles and obstacles to navigate roads. This article looks at whether LiDAR is necessary for this task. It explains how cameras, LiDAR and radar work and compares the approaches used by Tesla and Waymo. Although each sensor has strengths and weaknesses, there are still questions about which combination offers the best balance between safety and cost.
 </p>
+
+<!-- Main article: everything inside this div is counted by the word count -->
+<div id="Article_InText">
 
 <h3 id="Introduction">Introduction</h3>
-<p class="ex1">
-<pre id="Introduction_InText">
-  Active Learning (Angluin, 1988, Cohn et al., 1994) is a paradigm where a concept is learnt by an intelligent machine through the
-  interaction of an oracle with the machine system, over a sequence of learning epochs. A distinctive component in an active system
-  is the querying strategy, used to sample candidate training instances from a pool and evaluate them for informativeness,
-  i.e., their potential to improve the classification model. Various strategies have been proposed including; Query by Committee (Seung et al., 1992),
-  Monte Carlo estimation (Roy and McCallum, 2001), uncertainty sampling (Lewis and Gale, 1994) and version space reduction (margin sampling) (Tong and Koller, 2001).
-  Irrespective of how the most informative pattern instances are chosen at each epoch they are presented for labeling, to a machine (database) or human oracle that has
-  knowledge of the class labels. After adding the newly labeled instances to the current training set, a revised model is subsequently induced.
-  A goal of this process is to achieve an efficient, incremental advancement of learning at each epoch. The process is continued until some stopping criterion has been met,
-  such as reaching a stage where information from the selected instances is contrary to the model, causing the classifier confidence to drop, as in Vlachos (2008).
-</pre>
+<p>
+Road traffic collisions cause over a million deaths worldwide each year. Self-driving cars are being developed partly to reduce accidents caused by human mistakes. A car needs to detect its surroundings to make safe decisions.
+</p>
+<p>
+This raises the question: do self-driving cars need LiDAR to see safely? Some autonomous vehicles use several different sensors, while others rely mainly on cameras. This article will describe the three main sensor types, compare Tesla and Waymo, and consider whether LiDAR gives an important safety advantage.
 </p>
 
-<h3 id="Analysis and discussion">Analysis and discussion</h3>
-<p id="Analysis_InText">
-Bridge deck repair durability is the subject of much recent research such as in <a href="https://www.icevirtuallibrary.com/doi/full/10.1680/jbren.21.00034">Toshihiko et al (2023).</a>
+<h3 id="Cameras">Cameras</h3>
+<p>
+Cameras work by collecting light and turning it into images. Computer software can then analyse those images to identify traffic signs, road markings, cars and pedestrians. A major benefit of cameras is that they can recognise colours, which is particularly important when identifying traffic lights. They are also widely available and relatively inexpensive compared with some specialised sensors.
 </p>
-  Table 1: Data on cost and lifespan of bridge repairs
-  <table>
+<p>
+However, cameras can struggle in darkness, heavy rain or strong sunlight. Glare may make it difficult to see objects clearly. Unlike LiDAR, a normal camera does not directly measure the distance to an object, so the software needs to estimate depth from the images. This can be difficult in poor visibility.
+</p>
+
+<h3 id="LiDAR">LiDAR and Radar</h3>
+<p>
+LiDAR stands for Light Detection and Ranging. It sends out laser pulses and measures how long they take to return after hitting an object. These measurements can be combined to produce a three-dimensional picture of the surroundings. LiDAR can estimate object shape and distance, including at night.
+</p>
+<p>
+Radar uses radio waves rather than light. It is useful for measuring the distance and relative speed of other vehicles, and it generally performs well in poor weather. However, radar does not usually provide as much visual detail as cameras. LiDAR can also be affected by heavy fog or rain, while adding sensors may increase the cost of a vehicle.
+</p>
+
+<h3 id="Debate">The Debate: Tesla and Waymo</h3>
+<p>
+Companies have different opinions about how many sensors a self-driving car needs. Waymo's newer driving system uses cameras, LiDAR and radar together. One advantage of this approach is that a different sensor may still provide information when a camera struggles.
+</p>
+<p>
+Tesla uses camera-based technology for driving assistance. Its vision-based features use cameras and software, and the driver must remain attentive. This is different from Waymo's driverless service, so their safety cannot be compared simply by counting the sensors.
+</p>
+<p>
+The debate also involves cost. Cameras may make a system simpler and cheaper, while LiDAR and radar could offer additional information. More evidence is needed to establish how these differences affect safety in difficult road conditions.
+</p>
+
+<h3 id="Comparison">Sensor Comparison</h3>
+<p><b>Table 1: Preliminary comparison of sensors used in self-driving cars</b></p>
+  <table style="width:80%;">
   <tr>
-    <th>£ Cost of repairs</th>
-    <th>Lifespan of repairs (years)</th>
+    <th>Sensor</th>
+    <th>Range</th>
+    <th>Relative cost</th>
+    <th>Darkness</th>
+    <th>Rain or fog</th>
+    <th>Detail</th>
   </tr>
   <tr>
-    <td>0.7 m</td>
-    <td>2</td>
+    <td>Camera</td>
+    <td>Further research needed</td>
+    <td>Lower</td>
+    <td>Can struggle</td>
+    <td>Reduced visibility</td>
+    <td>Colour and road-sign detail</td>
   </tr>
   <tr>
-    <td>3.3 m</td>
-    <td>4</td>
+    <td>LiDAR</td>
+    <td>Further research needed</td>
+    <td>Generally higher</td>
+    <td>Can operate without daylight</td>
+    <td>Performance may decrease</td>
+    <td>3D shape and distance</td>
   </tr>
   <tr>
-    <td>2.6 m</td>
-    <td>5</td>
-  </tr>
-  <tr>
-    <td>17.4 m</td>
-    <td>7</td>
-  </tr>
-  <tr>
-    <td>8.8 m</td>
-    <td>9</td>
+    <td>Radar</td>
+    <td>Further research needed</td>
+    <td>To be researched</td>
+    <td>Works in darkness</td>
+    <td>Generally more resistant</td>
+    <td>Speed and distance, less visual detail</td>
   </tr>
 </table>
+<p>
+This table shows that the sensors offer different types of information. The ranges and costs still need to be checked against reliable sources before a final comparison can be made.
+</p>
 
-Formatting some equations using MathML
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow>
-<msup><mi>x</mi><mn>2</mn></msup>
-       <mo>+</mo><mi>4</mi><mo>&InvisibleTimes;</mo><mi>x</mi>
-       <mo>+</mo><mi>4</mi>
-  <mo>=</mo>
-  <mi>0</mi>
-</mrow>
-</math>
+<h3 id="Conclusion">Conclusion</h3>
+<p>
+LiDAR is useful because it gives a self-driving car information about the distance and shape of objects. Cameras and radar offer different advantages, so it may be helpful to combine them. However, this does not prove LiDAR is essential. More research into real-world safety and bad-weather performance is needed before reaching a stronger conclusion.
+</p>
 
-<div id="chart_div"></div>
-<script type="text/javascript">
-    google.charts.load('current', { 'packages' : ['corechart'] });
-    google.charts.setOnLoadCallback(drawChart);
-
-    function drawChart() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('number', 'Age');
-        data.addColumn('number', 'Salary');
-
-        data.addRows([
-            [25, 40000],
-            [30, 50000],
-            [35, 60000],
-            [40, 75000],
-            [45, 80000],
-            [50, 90000]
-        ]);
-        var options = {
-            title: 'Age vs. Salary',
-            hAxis: { title: 'Age' },
-            vAxis: { title: 'Salary' }
-        };
-        var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-    }
-</script>
+</div>
 
   <h3 id="References">References</h3>
 
 <p>
-<pre>
-  Angluin, D (1988), Queries and concept learning. Machine learning 2, (4), 319-342.
+<!-- Add your references here in Cite Them Right Harvard style -->
+</p>
 
-  Brinker, K (2003), Incorporating Diversity in Active Learning with Support Vector Machines,
-  Proceedings of the Twentieth International Conference on Machine Learning (ICML-2003).
-
-  Bruzzone, L, Chi, M and Marconcini, M (2006), A novel transductive SVM for semisupervised classication of remote-sensing images,
-  IEEE Transactions on Geoscience and Remote Sensing, 44, (11), 3363.
-
-  Bruzzone, L and Persello, C (2009), Active learning for classification of remote sensing images.
-  In: Geoscience and Remote Sensing Symposium, 2009 IEEE International, IGARSS 2009, 3.
-
-  Campbell, C, Cristianini, N and Smola, A (2000), Query learning with large margin classifiers.
-  In: Proc. 17th Internat. Conf.on Machine Learning. Morgan Kaufman, Stanford, CA,111-118.
-</pre>
-
-  </p>
-
-<p>Conference Presentation: SUUUUIIIIIIIIIII</p>
+<p>Conference Presentation: Do self-driving cars need LiDAR to see safely?</p>
 <video src="ENG0018 Presentation.mp4" width="800" height="450" controls>
 </video>
 
@@ -268,10 +257,9 @@ Formatting some equations using MathML
   // Function to calculate and display total word count from selected sections
   function displayTotalWordCount() {
     // Calculate word count for each section and accumulate the total
-    const IntroductionCount = displayWordCount("Introduction_InText");
-    const AnalysisCount = displayWordCount("Analysis_InText");
+    const ArticleCount = displayWordCount("Article_InText");
     // Calculate the sum of all selected sections
-    const totalWordCount = IntroductionCount + AnalysisCount;
+    const totalWordCount = ArticleCount;
     // Display the total word count
     document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
   }
